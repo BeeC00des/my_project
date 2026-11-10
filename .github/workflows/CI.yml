@@ -1,0 +1,52 @@
+
+# MyCareEnvoy - Node.js Continuous Integration
+# Installs dependencies, runs linting, tests and builds the application.
+
+name: Node.js CI
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout repository
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Setup Node.js
+      - name: Use Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: "Updated codebase/package-lock.json"
+
+      # Install dependencies
+      - name: Install dependencies
+        working-directory: "Updated codebase"
+        run: npm ci
+
+      # Run ESLint
+      - name: Run ESLint
+        working-directory: "Updated codebase"
+        run: npm run lint
+
+      # Run tests
+      - name: Run tests
+        working-directory: "Updated codebase"
+        run: npm test
+
+      # Build application
+      - name: Build application
+        working-directory: "Updated codebase"
+        run: npm run build
