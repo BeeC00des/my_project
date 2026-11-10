@@ -8,9 +8,37 @@ import { Button } from "@/components/ui/button";
 import { markEngaged } from "@/lib/visitor-engagement";
 
 const cols: { title: string; links: [string, string][] }[] = [
-  { title: "Families", links: [["/how-it-works", "How it works"], ["/plans", "Plans"], ["/get-started", "Get started"], ["/refer", "Refer a family"], ["/faq", "FAQ"]] },
-  { title: "Work with us", links: [["/join/nurses", "Nurses"], ["/join/doctors", "Doctors"], ["/join/caregivers", "Caregivers"], ["/partners", "Partner with us"], ["/employers", "For employers"]] },
-  { title: "Company", links: [["/about", "About"], ["/resources", "Resources"], ["/store", "Store"], ["/privacy", "Privacy policy"], ["/terms", "Terms of service"], ["/service-agreement", "Service agreement"]] },
+  {
+    title: "Families",
+    links: [
+      ["/how-it-works", "How it works"],
+      ["/plans", "Plans"],
+      ["/get-started", "Get started"],
+      ["/refer", "Refer a family"],
+      ["/faq", "FAQ"],
+    ],
+  },
+  {
+    title: "Work with us",
+    links: [
+      ["/join/nurses", "Nurses"],
+      ["/join/doctors", "Doctors"],
+      ["/join/caregivers", "Caregivers"],
+      ["/partners", "Partner with us"],
+      ["/employers", "For employers"],
+    ],
+  },
+  {
+    title: "Company",
+    links: [
+      ["/about", "About"],
+      ["/resources", "Resources"],
+      ["/store", "Store"],
+      ["/privacy", "Privacy policy"],
+      ["/terms", "Terms of service"],
+      ["/service-agreement", "Service agreement"],
+    ],
+  },
 ];
 
 function WaitlistBox() {
@@ -35,19 +63,58 @@ function WaitlistBox() {
   return (
     <div className="rounded-2xl bg-primary-foreground/10 p-5">
       <p className="font-serif text-lg">Want care in your city?</p>
-      <p className="mt-1 text-sm opacity-80">Tell us where they live. We’ll notify you when local care is available.</p>
+      <p className="mt-1 text-sm opacity-80">
+        Tell us where they live. We’ll notify you when local care is available.
+      </p>
       {state === "done" ? (
-        <p className="mt-4 text-sm font-medium" role="status">Thank you. We'll let you know as soon as we're there.</p>
+        <p className="mt-4 text-sm font-medium" role="status">
+          Thank you. We'll let you know as soon as we're there.
+        </p>
       ) : (
         <form onSubmit={submit} className="mt-4 grid gap-2" noValidate>
-          <input type="text" tabIndex={-1} autoComplete="off" value={hp} onChange={(e) => setHp(e.target.value)} className="hidden" aria-hidden />
-          <label className="sr-only" htmlFor="wl-city">City</label>
-          <input id="wl-city" placeholder="City, e.g. Ibadan" value={city} onChange={(e) => setCity(e.target.value)} className="h-11 rounded-xl bg-background px-3 text-foreground" />
-          <label className="sr-only" htmlFor="wl-email">Email</label>
-          <input id="wl-email" type="email" placeholder="Your email" value={email} onChange={(e) => setEmail(e.target.value)} className="h-11 rounded-xl bg-background px-3 text-foreground" />
-          {err && <p className="text-sm text-gold" role="alert">{err}</p>}
-          {state === "error" && <p className="text-sm text-gold" role="alert">Something went wrong. Please try again.</p>}
-          <Button type="submit" variant="cta" disabled={state === "sending"}>{state === "sending" ? "Joining..." : "Join the waitlist"}</Button>
+          <input
+            type="text"
+            tabIndex={-1}
+            autoComplete="off"
+            value={hp}
+            onChange={(e) => setHp(e.target.value)}
+            className="hidden"
+            aria-hidden
+          />
+          <label className="sr-only" htmlFor="wl-city">
+            City
+          </label>
+          <input
+            id="wl-city"
+            placeholder="City, e.g. Ibadan"
+            value={city}
+            onChange={(e) => setCity(e.target.value)}
+            className="h-11 rounded-xl bg-background px-3 text-foreground"
+          />
+          <label className="sr-only" htmlFor="wl-email">
+            Email
+          </label>
+          <input
+            id="wl-email"
+            type="email"
+            placeholder="Your email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="h-11 rounded-xl bg-background px-3 text-foreground"
+          />
+          {err && (
+            <p className="text-sm text-gold" role="alert">
+              {err}
+            </p>
+          )}
+          {state === "error" && (
+            <p className="text-sm text-gold" role="alert">
+              Something went wrong. Please try again.
+            </p>
+          )}
+          <Button type="submit" variant="cta" disabled={state === "sending"}>
+            {state === "sending" ? "Joining..." : "Join the waitlist"}
+          </Button>
         </form>
       )}
     </div>
@@ -60,16 +127,56 @@ export function Footer() {
       <div className="container-page grid gap-7 py-14 md:grid-cols-2 xl:grid-cols-[1.5fr_0.8fr_0.9fr_0.9fr_1.2fr]">
         <div>
           <Logo light />
-          <p className="mt-4 text-[15px] opacity-85">Verified nurses and doctor-led care for older parents in Nigeria, for families who live abroad.</p>
+          <p className="mt-4 text-[15px] opacity-85">
+            Verified nurses and doctor-led care for older parents in Nigeria, for families who live
+            abroad.
+          </p>
           <ul className="mt-5 space-y-2 text-[15px]">
-            <li><a className="flex items-center gap-2 hover:underline" href={`mailto:${SITE.email}`}><Mail className="size-4" aria-hidden /> {SITE.email}</a></li>
-            <li><a className="flex items-center gap-2 hover:underline" href={whatsappLink()} target="_blank" rel="noopener noreferrer"><MessageCircle className="size-4" aria-hidden /> {SITE.whatsappDisplay}</a></li>
+            <li>
+              <a className="flex items-center gap-2 hover:underline" href={`mailto:${SITE.email}`}>
+                <Mail className="size-4" aria-hidden /> {SITE.email}
+              </a>
+            </li>
+            <li>
+              <a
+                className="flex items-center gap-2 hover:underline"
+                href={whatsappLink()}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <MessageCircle className="size-4" aria-hidden /> {SITE.whatsappDisplay}
+              </a>
+            </li>
           </ul>
           <div className="mt-5 flex flex-wrap gap-3">
-            <a href={SITE.social.facebook} aria-label="MyCareEnvoy on Facebook" className="grid size-10 place-items-center rounded-full bg-primary-foreground/10 hover:bg-primary-foreground/20"><Facebook className="size-5" /></a>
-            <a href={SITE.social.instagram} aria-label="MyCareEnvoy on Instagram" className="grid size-10 place-items-center rounded-full bg-primary-foreground/10 hover:bg-primary-foreground/20"><Instagram className="size-5" /></a>
-            <a href={SITE.social.linkedin} aria-label="MyCareEnvoy on LinkedIn" className="grid size-10 place-items-center rounded-full bg-primary-foreground/10 hover:bg-primary-foreground/20"><Linkedin className="size-5" /></a>
-            <a href={SITE.social.twitter} aria-label="MyCareEnvoy on X" className="grid size-10 place-items-center rounded-full bg-primary-foreground/10 hover:bg-primary-foreground/20"><Twitter className="size-5" /></a>
+            <a
+              href={SITE.social.facebook}
+              aria-label="MyCareEnvoy on Facebook"
+              className="grid size-10 place-items-center rounded-full bg-primary-foreground/10 hover:bg-primary-foreground/20"
+            >
+              <Facebook className="size-5" />
+            </a>
+            <a
+              href={SITE.social.instagram}
+              aria-label="MyCareEnvoy on Instagram"
+              className="grid size-10 place-items-center rounded-full bg-primary-foreground/10 hover:bg-primary-foreground/20"
+            >
+              <Instagram className="size-5" />
+            </a>
+            <a
+              href={SITE.social.linkedin}
+              aria-label="MyCareEnvoy on LinkedIn"
+              className="grid size-10 place-items-center rounded-full bg-primary-foreground/10 hover:bg-primary-foreground/20"
+            >
+              <Linkedin className="size-5" />
+            </a>
+            <a
+              href={SITE.social.twitter}
+              aria-label="MyCareEnvoy on X"
+              className="grid size-10 place-items-center rounded-full bg-primary-foreground/10 hover:bg-primary-foreground/20"
+            >
+              <Twitter className="size-5" />
+            </a>
           </div>
         </div>
         {cols.map((c) => (
@@ -77,7 +184,11 @@ export function Footer() {
             <p className="font-serif text-lg">{c.title}</p>
             <ul className="mt-4 space-y-2 text-[15px] opacity-85">
               {c.links.map(([to, label]) => (
-                <li key={to}><Link to={to} className="hover:underline">{label}</Link></li>
+                <li key={to}>
+                  <Link to={to} className="hover:underline">
+                    {label}
+                  </Link>
+                </li>
               ))}
             </ul>
           </div>
@@ -86,7 +197,9 @@ export function Footer() {
       </div>
       <div className="border-t border-primary-foreground/15">
         <div className="container-page space-y-1 py-6 text-sm opacity-75">
-          <p>MyCareEnvoy is a product and service of PadiHealth Ltd, a company registered in Nigeria.</p>
+          <p>
+            MyCareEnvoy is a product and service of PadiHealth Ltd, a company registered in Nigeria.
+          </p>
           <p>© 2026 PadiHealth Ltd. All rights reserved.</p>
         </div>
       </div>

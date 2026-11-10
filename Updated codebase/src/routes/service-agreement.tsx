@@ -3,7 +3,11 @@ import { LegalPage } from "@/components/site/LegalPage";
 import { seo } from "@/lib/seo";
 
 export const Route = createFileRoute("/service-agreement")({
-  head: () => seo("Service agreement", "What's included in MyCareEnvoy care plans, response times, what we don't do, and how cancellation works."),
+  head: () =>
+    seo(
+      "Service agreement",
+      "What's included in MyCareEnvoy care plans, response times, what we don't do, and how cancellation works.",
+    ),
   component: () => <LegalPage title="Service agreement" html={html} />,
 });
 

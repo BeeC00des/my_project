@@ -4,15 +4,30 @@ const KEY = "mycareenvoy-visitor";
 type Visitor = { shown?: boolean; engaged?: boolean };
 let fallback: Visitor = {};
 export function readVisitor(): Visitor {
-  try { return { ...fallback, ...JSON.parse(localStorage.getItem(KEY) ?? "{}") }; }
-  catch { return fallback; }
+  try {
+    return { ...fallback, ...JSON.parse(localStorage.getItem(KEY) ?? "{}") };
+  } catch {
+    return fallback;
+  }
 }
 export function markVisitor(value: Visitor) {
   fallback = { ...readVisitor(), ...value };
-  try { localStorage.setItem(KEY, JSON.stringify(fallback)); } catch { /* Storage may be blocked. */ }
+  try {
+    localStorage.setItem(KEY, JSON.stringify(fallback));
+  } catch {
+    /* Storage may be blocked. */
+  }
 }
-export function markEngaged() { markVisitor({ engaged: true }); }
+export function markEngaged() {
+  markVisitor({ engaged: true });
+}
 export function canAutoShow(visitor: Visitor, pathname: string) {
-  return !visitor.shown && !visitor.engaged && !["/get-started", "/checkout", "/admin"].some((p) => pathname.startsWith(p));
+  return (
+    !visitor.shown &&
+    !visitor.engaged &&
+    !["/get-started", "/checkout", "/admin"].some((p) => pathname.startsWith(p))
+  );
 }
-export function openAvailability() { window.dispatchEvent(new Event("open-availability")); }
+export function openAvailability() {
+  window.dispatchEvent(new Event("open-availability"));
+}

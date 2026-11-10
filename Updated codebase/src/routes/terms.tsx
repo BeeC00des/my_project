@@ -4,7 +4,11 @@ import { SITE } from "@/config/site";
 import { seo } from "@/lib/seo";
 
 export const Route = createFileRoute("/terms")({
-  head: () => seo("Terms of service", "The terms that apply when you use the MyCareEnvoy website and subscribe to MyCareEnvoy care plans."),
+  head: () =>
+    seo(
+      "Terms of service",
+      "The terms that apply when you use the MyCareEnvoy website and subscribe to MyCareEnvoy care plans.",
+    ),
   component: () => <LegalPage title="Terms of service" html={html} />,
 });
 

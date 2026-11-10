@@ -12,7 +12,11 @@ const base = {
 
 describe("partner enquiry validation", () => {
   it("accepts a pharmacy with registration details", () => {
-    const r = partnerEnquirySchema.safeParse({ ...base, org_type: "Pharmacy", registration_number: "PCN Premises 1234567" });
+    const r = partnerEnquirySchema.safeParse({
+      ...base,
+      org_type: "Pharmacy",
+      registration_number: "PCN Premises 1234567",
+    });
     expect(r.success).toBe(true);
   });
 

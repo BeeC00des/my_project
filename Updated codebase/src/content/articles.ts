@@ -10,14 +10,20 @@ export type Article = {
   html: string;
 };
 
-export const CATEGORIES = ["Health tips", "Caring from abroad", "Family conversations", "Living well"] as const;
+export const CATEGORIES = [
+  "Health tips",
+  "Caring from abroad",
+  "Family conversations",
+  "Living well",
+] as const;
 
 export const ARTICLES: Article[] = [
   {
     slug: "signs-your-parent-needs-more-support",
     title: "7 signs your parent in Nigeria may need more support",
     category: "Family conversations",
-    excerpt: "Our parents rarely ask for help. These are the quiet signals worth paying attention to, even from thousands of miles away.",
+    excerpt:
+      "Our parents rarely ask for help. These are the quiet signals worth paying attention to, even from thousands of miles away.",
     minutes: 5,
     image: IMG.garden,
     html: `
@@ -44,7 +50,8 @@ export const ARTICLES: Article[] = [
     slug: "manage-parents-medications-from-abroad",
     title: "How to manage your parent's medications from abroad",
     category: "Caring from abroad",
-    excerpt: "Refills, fakes, missed doses and duplicate prescriptions. A practical system for keeping medications on track from another country.",
+    excerpt:
+      "Refills, fakes, missed doses and duplicate prescriptions. A practical system for keeping medications on track from another country.",
     minutes: 5,
     image: IMG.hero,
     html: `
@@ -69,7 +76,8 @@ export const ARTICLES: Article[] = [
     slug: "preparing-parent-for-hospital-visit",
     title: "Preparing your parent for a hospital visit",
     category: "Health tips",
-    excerpt: "A little preparation turns a long, stressful hospital day into a productive one. Here's a checklist families can share.",
+    excerpt:
+      "A little preparation turns a long, stressful hospital day into a productive one. Here's a checklist families can share.",
     minutes: 4,
     image: IMG.caregiver,
     html: `
@@ -101,7 +109,8 @@ export const ARTICLES: Article[] = [
     slug: "blood-pressure-at-70",
     title: "Blood pressure at 70: what's normal and what to watch",
     category: "Living well",
-    excerpt: "High blood pressure is common among older Nigerians and often silent. Here's what the numbers mean and when to act.",
+    excerpt:
+      "High blood pressure is common among older Nigerians and often silent. Here's what the numbers mean and when to act.",
     minutes: 5,
     image: IMG.couple,
     html: `

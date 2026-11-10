@@ -1,4 +1,12 @@
-export function LegalPage({ title, updated = "October 2026", html }: { title: string; updated?: string; html: string }) {
+export function LegalPage({
+  title,
+  updated = "October 2026",
+  html,
+}: {
+  title: string;
+  updated?: string;
+  html: string;
+}) {
   return (
     <section className="py-12 md:py-16">
       <div className="container-page max-w-3xl">

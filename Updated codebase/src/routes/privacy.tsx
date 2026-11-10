@@ -4,7 +4,11 @@ import { SITE } from "@/config/site";
 import { seo } from "@/lib/seo";
 
 export const Route = createFileRoute("/privacy")({
-  head: () => seo("Privacy policy", "How MyCareEnvoy collects, uses and protects personal and health information, in line with the Nigeria Data Protection Act 2023."),
+  head: () =>
+    seo(
+      "Privacy policy",
+      "How MyCareEnvoy collects, uses and protects personal and health information, in line with the Nigeria Data Protection Act 2023.",
+    ),
   component: () => <LegalPage title="Privacy policy" html={html} />,
 });
 

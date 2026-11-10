@@ -26,7 +26,12 @@ export function TestimonialsSection() {
   const real = data?.length ? data : null;
   const cards: Card[] = real
     ? real.map((t) => ({ key: t.id, quote: t.quote, name: t.name, detail: t.detail ?? undefined }))
-    : TESTIMONIALS.map((t) => ({ key: t.name, quote: t.quote, name: t.name, detail: `${t.role}, ${t.city}` }));
+    : TESTIMONIALS.map((t) => ({
+        key: t.name,
+        quote: t.quote,
+        name: t.name,
+        detail: `${t.role}, ${t.city}`,
+      }));
 
   return (
     <section className="bg-primary-soft py-20 md:py-28">
@@ -39,8 +44,16 @@ export function TestimonialsSection() {
                 <Quote className="size-8 text-gold" aria-hidden />
                 <blockquote className="mt-3 font-serif text-lg italic">{t.quote}</blockquote>
                 <figcaption className="mt-6 flex items-center gap-3">
-                  <span className="grid size-12 place-items-center rounded-full bg-primary font-serif text-lg text-primary-foreground" aria-hidden>{t.name[0]}</span>
-                  <span><span className="block font-semibold">{t.name}</span>{t.detail && <span className="text-sm text-muted-foreground">{t.detail}</span>}</span>
+                  <span
+                    className="grid size-12 place-items-center rounded-full bg-primary font-serif text-lg text-primary-foreground"
+                    aria-hidden
+                  >
+                    {t.name[0]}
+                  </span>
+                  <span>
+                    <span className="block font-semibold">{t.name}</span>
+                    {t.detail && <span className="text-sm text-muted-foreground">{t.detail}</span>}
+                  </span>
                 </figcaption>
               </figure>
             </Reveal>
