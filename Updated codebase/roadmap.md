@@ -1,0 +1,27 @@
+# Roadmap
+- [x] Mark the seven newly confirmed Care on request services available in configuration and live catalogue; verify request choices
+- [x] Correct baseline wording, distinguish care paths, shorten homepage and clarify free-call intake
+- [x] Mark home lab collection available, preserve approved quotes and response promises, verify changes
+- [x] Care on request page, service availability controls, request and notify forms, homepage and navigation
+- [x] Physiotherapist, lab and pharmacy applications with admin records
+- [x] Verify new public forms, service defaults, RLS policies, mobile layout and sitemap; authenticated admin editing awaits an authorised account
+- [ ] Care request owner email notifications: blocked by missing verified sending domain and owner recipient address
+- [x] Update only the video baseline price, copy, saved choice and FAQ; verify booking and checkout
+- [x] Add detailed nurse services to Plans, homepage summary and care-team link without new pages or menu items
+- [x] Check the three-part brief and verify nurse accordion defaults and cross-page links
+- [x] Baseline assessment content, choices, intake storage and FAQs from uploaded brief
+- [x] Availability popup, header access, private lead storage and automatic suppression
+- [x] Verify baseline totals, form saving and popup flows on desktop and mobile
+- [x] MyCareEnvoy name, uploaded logo emblem, favicon and four official social links
+- [x] Essential $35, Core $79, Complete $149; baseline assessment, annual savings, services and add-ons
+- [x] Store coming-soon page in desktop and mobile navigation
+- [x] Shorter homepage/about copy, Nigeria-wide voice and local availability wording
+- [x] Founder photo, WhatsApp number, text-only care team and operations description
+- [x] Resources and four articles, legal pages and all public routes verified
+- [x] Enrollment and city waitlist submissions saved successfully; 11 automated tests pass
+- [x] Existing customer quotes confirmed and approved by owner; testimonial cards retained
+- [x] Checkout page for baseline assessment, one-time services and add-ons; founder bio expanded
+- [ ] Payment gateway connection: owner will choose the gateway
+- [ ] Authenticated admin records and editing verification: blocked because no auth users exist; owner must create and sign in to an authorised admin account
+- [ ] Confirm the real contact email: current hello@careenvoy.com was supplied as draft content, not confirmed by the owner
+- [ ] Legal review: requires owner-supplied review before publication; existing customer quotes approved by owner

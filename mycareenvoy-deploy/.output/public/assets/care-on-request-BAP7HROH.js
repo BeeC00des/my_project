@@ -1,0 +1,1 @@
+var e=[`Recovery and therapy`,`Tests and medication`,`Specialist care`,`Support at home`,`When it matters most`],t=[`new`,`contacted`,`quoted`,`booked`,`completed`,`cancelled`,`waitlist`],n=[`Today`,`This week`,`Within a month`,`Just exploring`];e[0],e[0],e[1],e[1],e[2],e[2],e[2],e[3],e[3],e[3],e[4],e[4],e[4];export{t as n,n as r,e as t};

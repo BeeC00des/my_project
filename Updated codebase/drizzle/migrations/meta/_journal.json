@@ -1,0 +1,48 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1791929667994,
+      "tag": "0000_migration",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1792266010755,
+      "tag": "0001_baseline_intake_and_availability_leads",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1792269949328,
+      "tag": "0002_baseline_virtual_location",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1792270875656,
+      "tag": "0003_video_baseline_price",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1792471205360,
+      "tag": "0004_create_testimonials",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1793647165527,
+      "tag": "0005_care_on_request_and_partner_applications",
+      "breakpoints": true
+    }
+  ]
+}

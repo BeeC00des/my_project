@@ -1,0 +1,2 @@
+ALTER TABLE public.family_leads DROP CONSTRAINT family_leads_baseline_location_check;
+ALTER TABLE public.family_leads ADD CONSTRAINT family_leads_baseline_location_check CHECK (baseline_location IS NULL OR baseline_location IN ('clinic', 'home', 'virtual'));
